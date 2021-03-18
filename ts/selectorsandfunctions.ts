@@ -1,5 +1,3 @@
-import { NumericLiteral } from "typescript";
-
 const DATAFORMADDCLIENT:any = {
     nombre : document.querySelector('#nombre'),
     email : document.querySelector('#email'),
@@ -24,6 +22,13 @@ const showAlert = ( message:string):void => {
         }, 3000);
     }
 };
+const DATAFORMUPDATECLIENT:any = {
+    nombre : document.querySelector('#nombre'),
+    email : document.querySelector('#email'),
+    telefono : document.querySelector('#telefono'),
+    empresa : document.querySelector('#empresa'),
+    id : document.querySelector('#id'),
+}; Object.freeze(DATAFORMUPDATECLIENT);
 
 type dataClient = {
     nombre:string,
@@ -33,4 +38,4 @@ type dataClient = {
     id?:number,
 }
 
-export {DATAFORMADDCLIENT, showAlert, dataClient} 
+export {DATAFORMADDCLIENT, showAlert, dataClient, DATAFORMUPDATECLIENT} 

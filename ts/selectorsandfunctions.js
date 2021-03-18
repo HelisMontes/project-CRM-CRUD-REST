@@ -22,5 +22,12 @@ const showAlert = (message) => {
         }, 3000);
     }
 };
-export {DATAFORMADDCLIENT, showAlert} 
+const DATAFORMUPDATECLIENT = {
+    nombre: document.querySelector('#nombre'),
+    email: document.querySelector('#email'),
+    telefono: document.querySelector('#telefono'),
+    empresa: document.querySelector('#empresa'),
+    id: document.querySelector('#id'),
+}; Object.freeze(DATAFORMUPDATECLIENT);
 
+export {DATAFORMADDCLIENT, showAlert, DATAFORMUPDATECLIENT};

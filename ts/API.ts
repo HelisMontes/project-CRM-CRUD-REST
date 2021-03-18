@@ -29,3 +29,11 @@ export const deleteClient = async (id:number) => {
         });
     } catch (error) { console.log(error); }
 }
+
+export const selectClientForId = async (id:number) => {
+    try {
+        const result:any = await fetch(`${url}/${id}`)
+        const data:dataClient = await result.json();
+        return data;
+    } catch (error) { console.log(error); }
+};

@@ -3,7 +3,6 @@ import { getClient, deleteClient } from './API.js';
 const listClient = document.querySelector('#listado-clientes');
 document.addEventListener('DOMContentLoaded', () => showClients());
 listClient.addEventListener('click', confirmDelete);
-
 const showClients = async () => {
     const dataClients = await getClient();
     dataClients.map(client => {
