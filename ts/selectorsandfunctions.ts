@@ -1,3 +1,5 @@
+import { NumericLiteral } from "typescript";
+
 const DATAFORMADDCLIENT:any = {
     nombre : document.querySelector('#nombre'),
     email : document.querySelector('#email'),
@@ -28,6 +30,7 @@ type dataClient = {
     email:string,
     telefono:number,
     empresa:string,
+    id?:number,
 }
 
 export {DATAFORMADDCLIENT, showAlert, dataClient} 

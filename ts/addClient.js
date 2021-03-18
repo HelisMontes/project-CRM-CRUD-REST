@@ -1,23 +1,23 @@
 "use strict";
-import {DATAFORMADDCLIENT as DATAFORM, showAlert} from './selectorsandfunctions.js';
-import {newClient} from './API.js';
-
+Object.defineProperty(exports, "__esModule", { value: true });
+const selectorsandfunctions_js_1 = require("./selectorsandfunctions.js");
+const API_js_1 = require("./API.js");
 document.addEventListener('DOMContentLoaded', () => {
-    DATAFORM.addClient.addEventListener('click', validateForm);
+    selectorsandfunctions_js_1.DATAFORMADDCLIENT.addClient.addEventListener('click', validateForm);
 });
-const validateForm = (e) =>{ 
+const validateForm = (e) => {
     e.preventDefault();
     const data = {
-        nombre: DATAFORM.nombre.value,
-        email: DATAFORM.email.value,
-        telefono: Number (DATAFORM.telefono.value),
-        empresa: DATAFORM.empresa.value,
-    }; Object.freeze(data);
-    if(validateFormEmpty(data)){
-        showAlert('Todo los campos son obligatorios');
-        return
+        nombre: selectorsandfunctions_js_1.DATAFORMADDCLIENT.nombre.value,
+        email: selectorsandfunctions_js_1.DATAFORMADDCLIENT.email.value,
+        telefono: Number(selectorsandfunctions_js_1.DATAFORMADDCLIENT.telefono.value),
+        empresa: selectorsandfunctions_js_1.DATAFORMADDCLIENT.empresa.value,
+    };
+    Object.freeze(data);
+    if (validateFormEmpty(data)) {
+        selectorsandfunctions_js_1.showAlert('Todo los campos son obligatorios');
+        return;
     }
-    newClient(data);
+    API_js_1.newClient(data);
 };
-
-const validateFormEmpty = (obj) => !Object.values(obj).every( imput => imput!=='' );
+const validateFormEmpty = (obj) => !Object.values(obj).every(imput => imput !== '');
