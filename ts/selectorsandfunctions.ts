@@ -3,7 +3,7 @@ const DATAFORMADDCLIENT:any = {
     email : document.querySelector('#email'),
     telefono : document.querySelector('#telefono'),
     empresa : document.querySelector('#empresa'),
-    addclient : document.querySelector('#addclient'),
+    addClient : document.querySelector('#addclient'),
     formulario : document.querySelector('#formulario'),
 }; Object.freeze(DATAFORMADDCLIENT);
 
@@ -23,4 +23,11 @@ const showAlert = ( message:string):void => {
     }
 };
 
-export {DATAFORMADDCLIENT, showAlert} 
+type dataClient = {
+    nombre:string,
+    email:string,
+    telefono:number,
+    empresa:string,
+}
+
+export {DATAFORMADDCLIENT, showAlert, dataClient} 
