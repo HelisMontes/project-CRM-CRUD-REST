@@ -1,18 +1,18 @@
 {
   "clientes": [
     {
-      "nombre": "HELIS MONTES!",
-      "email": "correo2@correo.com",
-      "telefono": "12",
-      "empresa": "12212",
-      "id": 26
+      "nombre": "Helis",
+      "email": "helismontes@correo.com",
+      "telefono": "987654321",
+      "empresa": "PASSS",
+      "id": 29
     },
     {
-      "nombre": "Helis",
-      "email": "helismontes@gmail.com",
-      "telefono": 3506597364,
-      "empresa": "LAS",
-      "id": 27
+      "nombre": "Jose Lobo",
+      "email": "lobojm@correo.com",
+      "telefono": "123456",
+      "empresa": "UBER",
+      "id": 30
     }
   ]
 }

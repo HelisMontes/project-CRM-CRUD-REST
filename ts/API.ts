@@ -37,3 +37,16 @@ export const selectClientForId = async (id:number) => {
         return data;
     } catch (error) { console.log(error); }
 };
+
+export const updateClientDB = async (data:dataClient) => {
+    try {
+        await fetch(`${url}/${data.id}`,{
+            method: 'PUT',
+            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        window.location.href = 'index.html';
+    } catch (error) { console.log(error); }
+};

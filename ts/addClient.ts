@@ -1,4 +1,4 @@
-import {DATAFORMADDCLIENT as DATAFORM, showAlert, dataClient} from './selectorsandfunctions.js';
+import {DATAFORMADDCLIENT as DATAFORM, showAlert, dataClient, validateFormEmpty} from './selectorsandfunctions.js';
 import {newClient} from './API.js';
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 const validateForm = (e:any):void =>{ 
     e.preventDefault();
     const data:dataClient = {
-        nombre: DATAFORM.nombre.value,
-        email: DATAFORM.email.value,
-        telefono: Number (DATAFORM.telefono.value),
-        empresa: DATAFORM.empresa.value,
+        nombre: DATAFORM.nombre.value.trim(),
+        email: DATAFORM.email.value.trim(),
+        telefono: DATAFORM.telefono.value.trim(),
+        empresa: DATAFORM.empresa.value.trim(),
     }; Object.freeze(data);
     if(validateFormEmpty(data)){
         showAlert('Todo los campos son obligatorios');
@@ -19,5 +19,3 @@ const validateForm = (e:any):void =>{
     }
     newClient(data);
 };
-
-const validateFormEmpty = (obj:any):any => !Object.values(obj).every( imput => imput!=='' );

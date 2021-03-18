@@ -22,12 +22,14 @@ const showAlert = (message) => {
         }, 3000);
     }
 };
+const validateFormEmpty = (obj) => !Object.values(obj).every( imput => imput !=='' );
 const DATAFORMUPDATECLIENT = {
     nombre: document.querySelector('#nombre'),
     email: document.querySelector('#email'),
     telefono: document.querySelector('#telefono'),
     empresa: document.querySelector('#empresa'),
     id: document.querySelector('#id'),
+    update: document.querySelector('#update')
 }; Object.freeze(DATAFORMUPDATECLIENT);
 
-export {DATAFORMADDCLIENT, showAlert, DATAFORMUPDATECLIENT};
+export {DATAFORMADDCLIENT, showAlert, DATAFORMUPDATECLIENT, validateFormEmpty};

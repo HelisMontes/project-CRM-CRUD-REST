@@ -22,12 +22,16 @@ const showAlert = ( message:string):void => {
         }, 3000);
     }
 };
+
+const validateFormEmpty = (obj) => !Object.values(obj).every( imput => imput !=='' );
+
 const DATAFORMUPDATECLIENT:any = {
     nombre : document.querySelector('#nombre'),
     email : document.querySelector('#email'),
     telefono : document.querySelector('#telefono'),
     empresa : document.querySelector('#empresa'),
     id : document.querySelector('#id'),
+    update: document.querySelector('#update')
 }; Object.freeze(DATAFORMUPDATECLIENT);
 
 type dataClient = {
@@ -38,4 +42,4 @@ type dataClient = {
     id?:number,
 }
 
-export {DATAFORMADDCLIENT, showAlert, dataClient, DATAFORMUPDATECLIENT} 
+export {DATAFORMADDCLIENT, showAlert, dataClient, DATAFORMUPDATECLIENT, validateFormEmpty} 
