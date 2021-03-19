@@ -1,4 +1,4 @@
-const url:string = 'http://localhost:4000/clientes';
+const url: string = 'http://localhost:4000/clientes';
 import {DataClient} from './selectorsandfunctions.js';
 
 export const newClient = async (client: DataClient): Promise<void> => {

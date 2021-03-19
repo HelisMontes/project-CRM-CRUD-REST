@@ -1,13 +1,13 @@
-import {DATAFORMADDCLIENT as DATAFORM, showAlert, dataClient, validateFormEmpty} from './selectorsandfunctions.js';
+import {DATA_FORM_ADD_CLIENT as DATAFORM, showAlert, DataClient, validateFormEmpty} from './selectorsandfunctions.js';
 import {newClient} from './API.js';
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', () =>{
     DATAFORM.addClient.addEventListener('click', validateForm);
 });
 
-const validateForm = (e:any):void =>{ 
+const validateForm = (e:any): void =>{ 
     e.preventDefault();
-    const data:dataClient = {
+    const data: DataClient = {
         nombre: DATAFORM.nombre.value.trim(),
         email: DATAFORM.email.value.trim(),
         telefono: DATAFORM.telefono.value.trim(),
