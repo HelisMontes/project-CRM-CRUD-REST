@@ -29,12 +29,10 @@ export const deleteClient = async (id:number) => {
         });
     } catch (error) { console.log(error); }
 }
-
-export const selectClientForId = async (id:number) => {
+// ALL OF  FUNCTIONS **ASYNC** RETURN A **PROMISE<TYPE>**
+export const selectClientForId = async (id:number): Promise<dataClient> => {
     try {
-        const result:any = await fetch(`${url}/${id}`)
-        const data:dataClient = await result.json();
-        return data;
+        return await (<any>fetch(`${url}/${id}`)).json() as dataClient;
     } catch (error) { console.log(error); }
 };
 
