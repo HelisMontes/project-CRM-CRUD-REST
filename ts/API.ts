@@ -1,7 +1,7 @@
 const url:string = 'http://localhost:4000/clientes';
-import {dataClient} from './selectorsandfunctions.js';
+import {DataClient} from './selectorsandfunctions.js';
 
-export const newClient = async (client:dataClient) => {
+export const newClient = async (client: DataClient): Promise<void> => {
     try {
         await fetch(url,{
             method: 'POST',
@@ -14,11 +14,9 @@ export const newClient = async (client:dataClient) => {
     } catch (error) { console.log(error); }
 };
 
-export const getClient = async () => {
+export const getClients = async(): Promise<DataClient[]> => {
     try {
-        const result = await fetch(url);
-        const data = result.json()
-        return data;
+        return (await fetch(url)).json();
     } catch (error) { console.log(error); }
 };
 
@@ -29,14 +27,23 @@ export const deleteClient = async (id:number) => {
         });
     } catch (error) { console.log(error); }
 }
+
 // ALL OF  FUNCTIONS **ASYNC** RETURN A **PROMISE<TYPE>**
-export const selectClientForId = async (id:number): Promise<dataClient> => {
+
+/**
+ * @describe fetch() function => just response **Promise<Response>**
+ * await fetch() => return a **Response** in this class we can use **json()**
+ * 
+ * @param {number} id
+ * @returns {Promise<DataClient>}
+ */
+export const selectClientForId = async (id: number): Promise<DataClient> => {
     try {
-        return await (<any>fetch(`${url}/${id}`)).json() as dataClient;
+        return (await fetch(`${url}/${id}`)).json();
     } catch (error) { console.log(error); }
 };
 
-export const updateClientDB = async (data:dataClient) => {
+export const updateClientDB = async (data: DataClient): Promise<void> => {
     try {
         await fetch(`${url}/${data.id}`,{
             method: 'PUT',
